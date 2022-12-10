@@ -39,7 +39,7 @@ class Building:
     def rideelevator(self, elevatorno, floorno):
         self.elevatorlist[elevatorno].gotofloor(floorno)
 
-#huomioi että hissien numerot ovat 0 ja 1
+#Talossa on kaksi hissiä. Huomioi että hissien numerot ovat 0 ja 1.
 building1 = Building(1, 12, 2)
 print(building1.elevatorlist[0].currentfloor)
 print(building1.elevatorlist[1].currentfloor)
