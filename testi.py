@@ -1,20 +1,14 @@
-class Koira:
+class Auto:
+    def __init__(self, rekisteritunnus, väri):
+        self.rekisteritunnus = rekisteritunnus
+        self.väri = väri
 
-    tehty = 0
+class Maalaamo:
+    def maalaa(self, auto, väri):
+        auto.väri = väri
 
-    def __init__(self, nimi, syntymävuosi, haukahdus="Vuh-vuh"):
-        self.nimi = nimi
-        self.syntymävuosi = syntymävuosi
-        Koira.tehty = Koira.tehty + 1
-
-    def hauku(self, kerrat):
-        for i in range(kerrat):
-            print(self.haukahdus)
-        return
-
-koira1 = Koira("Muro", 2018)
-koira2 = Koira("Rekku", 2022, "Viu viu viu")
-print(f"Koiria on nyt {Koira.tehty}.")
-
-#koira1.hauku(2)
-#koira2.hauku(5)
+maalaamo = Maalaamo()
+auto = Auto("ABC-123", "sininen")
+print("Auto on " + auto.väri)
+maalaamo.maalaa(auto, "punainen")
+print("Auto on nyt " + auto.väri)
