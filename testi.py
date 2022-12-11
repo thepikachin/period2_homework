@@ -1,14 +1,19 @@
-class Auto:
-    def __init__(self, rekisteritunnus, väri):
-        self.rekisteritunnus = rekisteritunnus
-        self.väri = väri
+class Kulkuneuvo:
+    def __init__(self, nopeus):
+        self.nopeus = nopeus
 
-class Maalaamo:
-    def maalaa(self, auto, väri):
-        auto.väri = väri
+class Urheiluväline:
+    def __init__(self, paino):
+        self.paino = paino
 
-maalaamo = Maalaamo()
-auto = Auto("ABC-123", "sininen")
-print("Auto on " + auto.väri)
-maalaamo.maalaa(auto, "punainen")
-print("Auto on nyt " + auto.väri)
+class Polkupyörä(Kulkuneuvo, Urheiluväline):
+    def __init__(self, nopeus, paino, vaihteet):
+        Kulkuneuvo.__init__(self, nopeus)
+        Urheiluväline.__init__(self, paino)
+
+        self.vaihteet = vaihteet
+
+pp = Polkupyörä(45, 18.7, 3)
+print(pp.vaihteet)
+print(pp.nopeus)
+print(pp.paino)
